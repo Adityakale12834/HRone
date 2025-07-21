@@ -155,3 +155,12 @@ def get_orders(user_id: str, limit: int = 10, offset: int = 0):
             "previous": max(0, offset - limit)
         }
     }
+
+
+
+
+if __name__ == "__main__":
+    import os
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
